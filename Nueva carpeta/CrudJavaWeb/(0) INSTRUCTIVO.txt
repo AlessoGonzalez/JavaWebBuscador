@@ -1,0 +1,26 @@
+1.- En "tomcat-users.xml"(en xampp) poner este usuario antes de "</tomcat-users>"(el final del archivo):
+	<user username="root" password="root" roles="manager-gui,admin-gui,manager-script,admin"/>
+2.- En "pom.xml" poner las dependencias:
+	<dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpclient</artifactId>
+            <version>4.5.10</version>
+        </dependency>
+        <dependency>
+            <groupId>org.json</groupId>
+            <artifactId>json</artifactId>
+            <version>20231013</version>
+        </dependency>
+3.- En "pom.xml" actualizar version de este plugin:
+	<plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>3.3.2</version>
+                <configuration>
+                    <failOnMissingWebXml>false</failOnMissingWebXml>
+                </configuration>
+            </plugin>
+	SOLO CAMBIAR LA VERSION DEL PLUGIN
+4.- Darle "Clean adn Build"
+5.- Eliminar el index.html y poner un index.jsp
+6.- Despues copiar todos los archivos y poner codigo
